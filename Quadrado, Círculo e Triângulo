@@ -1,64 +1,55 @@
-1: Quadrado
-
-
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        int opcao;
 
-        System.out.print("Digite o valor do lado do quadrado: ");
-        double lado = scanner.nextDouble();
+        do {
+            System.out.println("Menu de opções:");
+            System.out.println("1 – Quadrado");
+            System.out.println("2 – Círculo");
+            System.out.println("3 – Triângulo");
+            System.out.println("0 – Fim");
+            System.out.print("Escolha uma opção: ");
+            opcao = scanner.nextInt();
 
-        double area = Math.pow(lado, 2);
+            switch (opcao) {
+                case 1:
+                    System.out.print("Digite o valor do lado do quadrado: ");
+                    double lado = scanner.nextDouble();
+                    double areaQuadrado = Math.pow(lado, 2);
+                    System.out.println("A área do quadrado com lado " + lado + " é: " + areaQuadrado);
+                    break;
 
-        System.out.println("A área do quadrado com lado " + lado + " é: " + area);
+                case 2:
+                    System.out.print("Digite o valor do raio do círculo: ");
+                    double raio = scanner.nextDouble();
+                    double areaCirculo = Math.PI * Math.pow(raio, 2);
+                    System.out.println("A área do círculo com raio " + raio + " é: " + areaCirculo);
+                    break;
 
-        scanner.close();
-    }
-}
+                case 3:
+                    System.out.print("Digite o valor da base do triângulo: ");
+                    double base = scanner.nextDouble();
+                    System.out.print("Digite o valor da altura do triângulo: ");
+                    double altura = scanner.nextDouble();
+                    double areaTriangulo = (base * altura) / 2;
+                    System.out.println("A área do triângulo com base " + base + " e altura " + altura + " é: " + areaTriangulo);
+                    break;
 
+                case 0:
+                    System.out.println("Fim do programa.");
+                    break;
 
-2: Círculo: 
+                default:
 
+                    System.out.println("Opção inválida.");
+                    break;
+            }
+            System.out.println();
 
-import java.util.Scanner;
-
-public class Main {
-    public static void main(String[] args) {
-      
-        Scanner scanner = new Scanner(System.in);
-       
-        System.out.print("Digite o valor do raio do círculo: ");
-        double raio = scanner.nextDouble();
-       
-        double area = Math.PI * Math.pow(raio, 2);
-       
-        System.out.println("A área do círculo com raio " + raio + " é: " + area);
-
-        scanner.close();
-    }
-}
-
-
-3: Triângulo
-
-
-import java.util.Scanner;
-
-public class Main {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-
-        System.out.print("Digite o valor da base do triângulo: ");
-        double base = scanner.nextDouble();
-
-        System.out.print("Digite o valor da altura do triângulo: ");
-        double altura = scanner.nextDouble();
-
-        double area = (base * altura) / 2;
-
-        System.out.println("A área do triângulo com base " + base + " e altura " + altura + " é: " + area);
+        } while (opcao != 0);
 
         scanner.close();
     }
