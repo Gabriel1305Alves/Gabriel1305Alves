@@ -1,0 +1,65 @@
+1: Quadrado
+
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Digite o valor do lado do quadrado: ");
+        double lado = scanner.nextDouble();
+
+        double area = Math.pow(lado, 2);
+
+        System.out.println("A área do quadrado com lado " + lado + " é: " + area);
+
+        scanner.close();
+    }
+}
+
+
+2: Círculo: 
+
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+      
+        Scanner scanner = new Scanner(System.in);
+       
+        System.out.print("Digite o valor do raio do círculo: ");
+        double raio = scanner.nextDouble();
+       
+        double area = Math.PI * Math.pow(raio, 2);
+       
+        System.out.println("A área do círculo com raio " + raio + " é: " + area);
+
+        scanner.close();
+    }
+}
+
+
+3: Triângulo
+
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Digite o valor da base do triângulo: ");
+        double base = scanner.nextDouble();
+
+        System.out.print("Digite o valor da altura do triângulo: ");
+        double altura = scanner.nextDouble();
+
+        double area = (base * altura) / 2;
+
+        System.out.println("A área do triângulo com base " + base + " e altura " + altura + " é: " + area);
+
+        scanner.close();
+    }
+}
